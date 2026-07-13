@@ -297,5 +297,7 @@ img { display: block; max-width: 100%; }
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   margin: 30px 0 20px;
 }
-.footer-copy { text-align: center; color: #94a3b8; font-size: 14px; }
+.footer-copy { 
+  text-align: center; color: #94a3b8; font-size: 14px; 
+}
 
