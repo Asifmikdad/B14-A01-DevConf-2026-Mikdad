@@ -1,4 +1,6 @@
-/* Universal Colors and Other things */
+/* ============================================================
+   0. VARIABLES • RESET • BASE
+   ============================================================ */
 :root {
   --blue: #2563eb;
   --blue-dark: #1d4ed8;
@@ -11,9 +13,7 @@
   --radius: 12px;
 }
 
-* { 
-    margin: 0; padding: 0; box-sizing: border-box; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
@@ -22,35 +22,26 @@ body {
   line-height: 1.6;
 }
 
-a {
-     text-decoration: none; color: inherit; 
-}
-ul {
-     list-style: none; 
-}
-img {
-     display: block; max-width: 100%; 
-}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
 
-/* Reusable centered wrapper */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* Reusable section headings */
 .section-title {
   text-align: center;
   font-size: 40px;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
+.section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 10px;
 }
 
 .btn {
@@ -62,22 +53,17 @@ img {
   cursor: pointer;
   transition: background 0.2s, transform 0.1s;
 }
-.btn-primary {
-     background: var(--blue); color: #fff; 
-}
-.btn-primary:hover {
-     background: var(--blue-dark); 
-}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-lg { padding: 15px 34px; font-size: 16px; }
 
-.logo {
-     display: flex; align-items: center; gap: 10px; 
-}
-.logo-img {
-     height: 40px; width: auto; 
-}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-img { height: 40px; width: auto; }
 
-/* Navbar Design CSS */
 
+/* ============================================================
+   1. NAVBAR
+   ============================================================ */
 .navbar {
   border-bottom: 1px solid var(--border);
   position: sticky; top: 0; z-index: 100;
@@ -90,20 +76,19 @@ img {
   justify-content: space-between;
   height: 72px;
 }
-.nav-menu {
-     display: flex; gap: 30px; 
-}
+.nav-menu { display: flex; gap: 30px; }
 .nav-menu a {
   color: #334155;
   font-size: 15px;
   font-weight: 500;
   transition: color 0.2s;
 }
-.nav-menu a:hover {
-     color: var(--blue); 
-}
+.nav-menu a:hover { color: var(--blue); }
 
-/* Banner CSS */
+
+/* ============================================================
+   2. HERO / BANNER
+   ============================================================ */
 .hero {
   background:
     linear-gradient(rgba(8, 12, 24, 0.78), rgba(8, 12, 24, 0.88)),
@@ -132,7 +117,10 @@ img {
   font-size: 18px;
 }
 
-/* Speakers Section CSS */
+
+/* ============================================================
+   3. SPEAKERS
+   ============================================================ */
 .speakers { padding: 90px 0; }
 .speaker-grid {
   display: grid;
@@ -164,8 +152,10 @@ img {
 .speaker-name { font-size: 19px; font-weight: 700; margin: 8px 0 4px; }
 .speaker-role { color: var(--muted); font-size: 14px; }
 
-/* Pricing Section CSS */
 
+/* ============================================================
+   4. PRICING
+   ============================================================ */
 .pricing { padding: 90px 0; background: var(--bg-alt); }
 .pricing-grid {
   display: grid;
@@ -230,3 +220,82 @@ img {
 .plan-featured .plan-note { color: #94a3b8; }
 .plan-featured .plan-divider { border-top-color: rgba(255, 255, 255, 0.15); }
 .plan-featured .plan-features li::before { background: #60a5fa; }
+
+
+/* ============================================================
+   5. HACKATHON  (custom AI-challenge section)
+   ============================================================ */
+.hackathon {
+  padding: 90px 0;
+  background: var(--navy);
+  color: #fff;
+}
+.hackathon-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.hackathon-badge {
+  display: inline-block;
+  background: rgba(37, 99, 235, 0.2);
+  color: #93c5fd;
+  font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1px;
+  padding: 6px 14px; border-radius: 999px;
+}
+.hackathon-title {
+  font-size: 38px; font-weight: 800;
+  margin: 18px 0 16px; letter-spacing: -0.5px;
+}
+.hackathon-text { color: #cbd5e1; font-size: 16px; max-width: 500px; }
+.hackathon-stats { display: flex; gap: 40px; margin: 30px 0; }
+.stat strong { display: block; font-size: 30px; font-weight: 800; color: #60a5fa; }
+.stat span { color: #94a3b8; font-size: 14px; }
+
+.hackathon-timeline { display: flex; flex-direction: column; gap: 20px; }
+.timeline-item {
+  display: flex; gap: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.timeline-num {
+  flex-shrink: 0;
+  width: 40px; height: 40px;
+  background: var(--blue);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+}
+.timeline-item h4 { font-size: 17px; margin-bottom: 4px; }
+.timeline-item p { color: #94a3b8; font-size: 14px; }
+
+
+/* ============================================================
+   6. FOOTER
+   ============================================================ */
+.site-footer { background: #0b1120; color: #fff; padding: 50px 0 30px; }
+.footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social-links { display: flex; gap: 14px; }
+.social-links a {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #cbd5e1;
+  transition: background 0.2s, color 0.2s;
+}
+.social-links a:hover { background: var(--blue); color: #fff; }
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 30px 0 20px;
+}
+.footer-copy { text-align: center; color: #94a3b8; font-size: 14px; }
+
